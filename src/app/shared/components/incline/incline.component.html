@@ -1,0 +1,50 @@
+<p>incline works!</p>
+
+<span>Вводимые символы отрисовываются под инпутом: </span>
+<input #textboxIncontinently (keyup)="onKeyupIncontinently(textboxIncontinently.value)">
+<p>
+  <span>Используется переменная ссылки шаблона без двухсторонней привязки: </span>
+  <span>{{ messageIncontinently }}</span>
+</p>
+
+<!--(keyup.enter) - привязка обработчика на нажатие по клавише Enter-->
+<span>Символы отрисовываются после нажатия на ввод: </span>
+<input #textboxKeypress (keyup.enter)="onKeyupKeypress(textboxKeypress.value)">
+<p>
+  <span>Используется привязка обработчика на нажатия по клавише ввод: </span>
+  <span>{{ messageKeypress }}</span>
+</p>
+
+<!--(blur)="onKeyupTwoEvents(textboxTwoEvents)" - обработчик на событие потери фокуса-->
+<span>Обработчики на события потери фокуса и нажатие ввода: </span>
+<input #textboxTwoEvents
+  (keyup.enter)="onKeyupTwoEvents(textboxTwoEvents.value)"
+  (blur)="onKeyupTwoEvents(textboxTwoEvents.value)">
+<p>
+  <span>Привязка обработчика на потерю фокуса и нажатие ввода: </span>
+  <span>{{ messageTwoEvents }}</span>
+</p>
+
+<h4>Заполняемый список</h4>
+<span>Значение нового элемента списка: </span>
+<input type="text" #inputFillingList
+  (keyup.enter)="addListItem(inputFillingList.value)">
+<button (click)="addListItem(inputFillingList.value)"
+>Добавить</button>
+<ul>
+  <li *ngFor="let item of fillingList">
+    {{ item }}
+  </li>
+</ul>
+
+<div class="container">
+  <span>Испытываемый инпут: </span>
+  <input type="text" [(ngModel)]="dataTestingInput" #myinput required><br/>
+  <p>Стили инпута: <b>{{ myinput.className }}</b></p>
+  <p>Обратите внимание на изменение классов инпута при следующих действиях:</p>
+  <ul>
+    <li>Кликните на поле ввода - потом за его пределами <i>(ng-untouched) -> (ng-touched)</i></li>
+    <li>Введите значение в поле ввода <i>(ng-pristine) -> (ng-dirty)</i></li>
+    <li>Удалите значение из поля ввода <i>(ng-valid) -> (ng-valid)</i></li>
+  </ul>
+</div>

@@ -26,6 +26,10 @@ export class DeclivityComponent implements OnInit {
     'Первый', '[Второй]', '{Третий}', '(Четвёртый)', 'Пятый'
   ]
 
+  choice: string
+
+  resultOfSum: number
+
   constructor() {}
 
   ngOnInit() {}
@@ -53,6 +57,10 @@ export class DeclivityComponent implements OnInit {
 
   toggleVisibility() {
     this.showUl = !this.showUl
+  }
+
+  calculateSum(x: number|string, y: number|string) {
+    this.resultOfSum = +x + +y
   }
 
 }

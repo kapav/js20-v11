@@ -72,3 +72,27 @@
 <button
   (click)="toggleVisibility()"
 >{{ showUl ? 'Скрыть' : 'Показать' }}</button>
+
+<!--Директива ngSwitch отображает один элемент из набора возможных-->
+<div [ngSwitch]="choice">
+  <div *ngSwitchCase="'1'">Вариант 1</div>
+  <div *ngSwitchCase="'2'">Вариант 2</div>
+  <div *ngSwitchCase="'3'">Вариант 3</div>
+  <div *ngSwitchDefault>Вариант по умолчанию</div>
+</div>
+
+<span>Введите натуральное число: </span>
+<input type="text" [(ngModel)]="choice"><br/>
+
+<!--
+  Template Reference Variable - ссылка на DOM-элемент или
+  директиву в шаблоне.
+  К переменной можно обратиться в любой части шаблона,
+  в котором она объявлена.
+-->
+X <input #xInput type="text"><br/>
+Y <input ref-yInput type="text"><br/>
+
+<!--xInput и yInput - ссылки на элементы input, созданные выше-->
+<button (click)="calculateSum(xInput.value, yInput.value)">Вычислить сумму</button>
+<div><span>Результат при суммировании: </span><span>{{ resultOfSum }}</span></div>

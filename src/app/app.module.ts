@@ -19,6 +19,7 @@ import { WallComponent } from './shared/components/wall/wall.component';
 import { BiasComponent } from './shared/components/bias/bias.component';
 import { CliffComponent } from './shared/components/cliff/cliff.component';
 import { DeclivityComponent } from './shared/components/declivity/declivity.component';
+import { InclineComponent } from './shared/components/incline/incline.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DeclivityComponent } from './shared/components/declivity/declivity.comp
     WallComponent,
     BiasComponent,
     CliffComponent,
-    DeclivityComponent
+    DeclivityComponent,
+    InclineComponent
   ],
   imports: [
     BrowserModule,
