@@ -1,5 +1,15 @@
 <p>storey works!</p>
 
-<app-slab></app-slab>
+<div
+  *ngIf="payload.lurked; else pose"
+>{{ positiveNotificFromStorey }}</div>
+
+<ng-template #pose>
+  <div>{{ negativeNotificFromStorey }}</div>
+</ng-template>
+
+<app-slab
+  (onSlabToggle)="tumblerFromStorey($event)"
+></app-slab>
 
 <app-wall></app-wall>

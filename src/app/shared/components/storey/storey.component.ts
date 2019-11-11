@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-storey',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreyComponent implements OnInit {
 
-  constructor() { }
+  @Output('onStoreyToggle') tumblerToHomePage = new EventEmitter()
 
-  ngOnInit() {
+  payload = {}
+
+  positiveNotificFromStorey = 'Отображено во втором предке'
+  negativeNotificFromStorey = 'Скрыто во втором предке'
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  tumblerFromStorey(payload) {
+    this.payload = payload
+    this.tumblerToHomePage.emit(this.payload)
   }
 
 }

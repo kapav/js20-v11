@@ -1,5 +1,19 @@
-<app-garret></app-garret>
+<app-garret
+  [garretLettering]="payload.buryInscription"
+  [garretAnnouncement]="payload.evinceNotice"
+  [garretToggle]='payload.lurked'
+></app-garret>
 
 <p>home-page works!</p>
 
-<app-storey></app-storey>
+<div
+  *ngIf="payload.lurked; elsepose"
+  >{{ positiveNotificfromHomePage }}</div>
+
+<ng-template #pose>
+  <div>{{ negativeNotificFromHomePage }}</div>
+</ng-template>
+
+<app-storey
+  (onStoreyToggle)="payload = $event"
+></app-storey>

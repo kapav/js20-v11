@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gable',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GableComponent implements OnInit {
 
-  constructor() { }
+  @Input('gableLettering') obscureInscription: string
+  @Input('gableAnnouncement') showNotice: string
+  @Input('gableToggle') dissembled: boolean
 
-  ngOnInit() {
-  }
+  constructor() {}
+
+  ngOnInit() {}
 
 }

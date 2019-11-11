@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-garret',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GarretComponent implements OnInit {
 
-  constructor() { }
+  @Input('garretLettering') tuckInscription: string
+  @Input('garretAnnouncement') revealNotice: string
+  @Input('garretToggle') stashed: boolean
 
-  ngOnInit() {
-  }
+  positiveNotificFromGarret = 'Отображено в первом предке'
+  negativeNotificFromGarret = 'Скрыто в первом предке'
+
+  constructor() {}
+
+  ngOnInit() {}
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slab',
@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlabComponent implements OnInit {
 
-  constructor() { }
+  @Output('onSlabToggle') tumblerToStorey = new EventEmitter()
 
-  ngOnInit() {
+  payload = {
+    buryInscription: 'Скрываемая надпись',
+    evinceNotice: 'Отображаемое уведомление',
+    lurked: false
+  }
+
+  positiveNotificFromSlab = 'Отображено в третьем потомке'
+  negativeNotificFromSlab = 'Скрыто в третьем потомке'
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  onClick() {
+    this.payload.lurked = !this.payload.lurked
+    this.tumblerToStorey.emit(this.payload)
   }
 
 }

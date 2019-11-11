@@ -7,6 +7,15 @@ import {Component, OnInit} from '@angular/core'
 })
 export class HomePageComponent implements OnInit {
 
+  payload = {
+    buryInscription: '',
+    evinceNotice: '',
+    lurked: false
+  }
+
+  positiveNotificFromHomePage = 'Отображено на домашней странице'
+  negativeNotificFromHomePage = 'Скрыто в домашней странице'
+
   constructor() {}
 
   ngOnInit() {}

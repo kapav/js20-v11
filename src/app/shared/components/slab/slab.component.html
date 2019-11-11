@@ -1,1 +1,16 @@
 <p>slab works!</p>
+
+<div
+  *ngIf="payload.lurked; else pose"
+>{{ positiveNotificFromSlab }}</div>
+
+<ng-template #pose>
+  <div>{{ negativeNotificFromSlab }}</div>
+</ng-template>
+
+<button
+  type="button"
+  (click)="onClick()"
+>
+  {{ payload.lurked ? 'Скрыть' : 'Показать' }}
+</button>
