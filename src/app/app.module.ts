@@ -20,6 +20,12 @@ import { BiasComponent } from './shared/components/bias/bias.component';
 import { CliffComponent } from './shared/components/cliff/cliff.component';
 import { DeclivityComponent } from './shared/components/declivity/declivity.component';
 import { InclineComponent } from './shared/components/incline/incline.component';
+import { PitchComponent } from './shared/components/pitch/pitch.component';
+import { SlantComponent } from './shared/components/slant/slant.component';
+import { TiltComponent } from './shared/components/tilt/tilt.component';
+import { StaircaseComponent } from './shared/components/staircase/staircase.component';
+import { StairwayComponent } from './shared/components/stairway/stairway.component';
+import { StairwellComponent } from './shared/components/stairwell/stairwell.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +43,13 @@ import { InclineComponent } from './shared/components/incline/incline.component'
     BiasComponent,
     CliffComponent,
     DeclivityComponent,
-    InclineComponent
+    InclineComponent,
+    PitchComponent,
+    SlantComponent,
+    TiltComponent,
+    StaircaseComponent,
+    StairwayComponent,
+    StairwellComponent
   ],
   imports: [
     BrowserModule,
