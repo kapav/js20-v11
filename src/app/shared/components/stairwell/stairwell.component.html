@@ -1,1 +1,44 @@
 <p>stairwell works!</p>
+
+<div class="container">
+  <h3>Регистрация пользователя. Реактивная форма. Сообщения об ошибках из кода компонента</h3>
+  <!--CO - error messages from COmponent code-->
+  <form (ngSubmit)="onSubmit()"
+    [formGroup]="userForm">
+    <div class="form-group">
+      <label for="nameCo">Имя:</label>
+      <input type="text" id="nameCo" class="form-control"
+        formControlName="name">
+      <div *ngIf="formErrors.name" class="alert alert-danger">
+        {{ formErrors.name }}
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="ageCo">Возраст:</label>
+      <input type="text" id="ageCo" class="form-control"
+        formControlName="age">
+      <div *ngIf="formErrors.age" class="alert alert-danger">
+        {{ formErrors.age }}
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="emailCo">Почта:</label>
+      <input type="text" id="emailCo" class="form-control"
+        formControlName="email">
+      <div *ngIf="formErrors.email" class="alert alert-danger">
+        {{ formErrors.email }}
+      </div>
+    </div>
+    <div class="form-control">
+      <label for="roleCo">Роль:</label>
+      <select id="roleCo" class="form-control"
+        formControlName="role">
+        <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+      </select>
+      <div *ngIf="formErrors.role" class="alert alert-danger">
+        {{ formErrors.role }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default" [disabled]="!userForm.valid">Отправить</button>
+  </form>
+</div>

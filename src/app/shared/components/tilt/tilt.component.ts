@@ -44,7 +44,8 @@ export class TiltComponent implements OnInit, AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit(): void {
-    this.userformEf.valueChanges.subscribe(data => this.onValueChanged(data))
+    this.userformEf.valueChanges
+      .subscribe(data => this.onValueChanged(data))
   }
 
   onSubmitEf() {
